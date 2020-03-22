@@ -39,32 +39,32 @@
 </template>
 
 <script>
-import { find } from '@/api/ass'
-const fs = require('fs')
+import { find } from "@/api/ass"
+const fs = require("fs")
 
 export default {
-  data () {
+  data() {
     return {
       loading: true,
       info: {},
       list: []
     }
   },
-  created () {
+  created() {
     this.fetchData()
   },
   methods: {
-    async fetchData () {
+    async fetchData() {
       this.loading = true
       find(this.$route.query.id).then(doc => {
         this.info = doc
-        const content = fs.readFileSync(doc.path, 'utf-8')
-        const lines = content.split('\n')
+        const content = fs.readFileSync(doc.path, "utf-8")
+        const lines = content.split("\n")
         const list = []
         for (const line of lines) {
-          if (line.indexOf('\\N') !== -1) {
-            const usefulInfo = line.split(',,')[1].replace(/\r/, '')
-            const items = usefulInfo.split('\\N{\\fs45}')
+          if (line.indexOf("\\N") !== -1) {
+            const usefulInfo = line.split(",,")[1].replace(/\r/, "")
+            const items = usefulInfo.split("\\N{\\fs45}")
             list.push({
               first: items[0],
               second: items[1]

@@ -92,15 +92,15 @@
 </template>
 
 <script>
-import { index, store } from '@/api/ass'
+import { index, store } from "@/api/ass"
 
 const defaultInfo = {
-  path: ''
+  path: ""
 }
 export default {
-  data () {
+  data() {
     return {
-      formLabelWidth: '15%',
+      formLabelWidth: "15%",
       searchForm: {
         page: 1,
         size: 20
@@ -117,19 +117,19 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.fetchData()
   },
   methods: {
-    handleSizeChange (val) {
+    handleSizeChange(val) {
       this.searchForm.size = val
       this.fetchData()
     },
-    handleCurrentChange (val) {
+    handleCurrentChange(val) {
       this.searchForm.page = val
       this.fetchData()
     },
-    fetchData (resetPage) {
+    fetchData(resetPage) {
       if (resetPage === true) {
         this.page = 1
       }
@@ -139,24 +139,24 @@ export default {
         this.list.loading = false
       })
     },
-    handleAdd () {
+    handleAdd() {
       this.dialog.visible = true
       this.info = Object.assign({}, defaultInfo)
     },
-    handleChangeFile (e) {
+    handleChangeFile(e) {
       const files = e.target.files || e.dataTransfer.files
       if (files.length) {
         this.file = files[0]
       }
     },
-    async confirmInfo () {
+    async confirmInfo() {
       await store({
         name: this.file.name,
         path: this.file.path
       })
       this.$message({
-        type: 'success',
-        message: '操作成功',
+        type: "success",
+        message: "操作成功",
         duration: 1 * 1000,
         onClose: () => {
           this.dialog.visible = false
@@ -168,6 +168,4 @@ export default {
 }
 </script>
 
-
-<style>
-</style>
+<style></style>

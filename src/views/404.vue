@@ -50,19 +50,19 @@
 </template>
 
 <script>
-import img404 from '@/assets/404_images/404.png'
-import img404Cloud from '@/assets/404_images/404_cloud.png'
+import img404 from "@/assets/404_images/404.png"
+import img404Cloud from "@/assets/404_images/404_cloud.png"
 
 export default {
-  data () {
+  data() {
     return {
       img404,
       img404Cloud
     }
   },
   computed: {
-    message () {
-      return '特朗普说这个页面你不能进......'
+    message() {
+      return "特朗普说这个页面你不能进......"
     }
   }
 }
@@ -256,5 +256,4 @@ export default {
     }
   }
 }
-
 </style>

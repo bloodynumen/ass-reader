@@ -11,7 +11,7 @@
 <script>
 export default {
   name: "Layout"
-};
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>

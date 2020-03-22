@@ -1,11 +1,11 @@
-import db from '@/database'
+import db from "@/database"
 
-export function find (id) {
+export function find(id) {
   const opt = {
     _id: id
   }
-  return new Promise(function (resolve, reject) {
-    db.findOne(opt, function (err, doc) {
+  return new Promise(function(resolve, reject) {
+    db.findOne(opt, function(err, doc) {
       if (err) {
         reject(err)
       } else {
@@ -15,7 +15,7 @@ export function find (id) {
   })
 }
 
-export async function store (info) {
+export async function store(info) {
   var id = 0
   await db.insert(info, (err, newDoc) => {
     id = newDoc._id
@@ -26,7 +26,7 @@ export async function store (info) {
   return id
 }
 
-export async function index (params) {
+export async function index(params) {
   const result = {
     data: [],
     total: 0

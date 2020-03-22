@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'AssReader'
-  }
+export default {
+  name: "AssReader"
+}
 </script>
 
 <style>
-  /* CSS */
+/* CSS */
 </style>
