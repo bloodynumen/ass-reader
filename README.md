@@ -1,4 +1,4 @@
-# ass-1
+# ass-reader
 
 ## Project setup
 ```
